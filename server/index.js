@@ -16,7 +16,8 @@ app.get("/", (req, res) => {
 module.exports = app;
 
 // Start a local server only when not running on serverless
-if (!process.env.VERCEL) {
-  const PORT = process.env.PORT || 5000;
-  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-}
+const port = process.env.PORT || 10000;
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server running on port ${port}`);
+});   
+
