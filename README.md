@@ -63,3 +63,15 @@ nodemon index.js
 ```
 Server starts at http://localhost:5000
 
+## Screenshots
+
+Place screenshot images in `client/public/screenshots/` so they can be served statically. Suggested filenames are provided below—replace them with your own if needed.
+
+### Summary View
+![Summary View](client/public/screenshots/summary.png)
+
+### Data Table
+![Data Table](client/public/screenshots/table.png)
+
+### Cost Allocation Chart
+![Cost Allocation Chart](client/public/screenshots/chart.png)
