@@ -9,7 +9,7 @@ export async function fetchSpendData(filters = {}) {
   if (filters.env) params.set('env', filters.env);
   if (filters.month) params.set('month', filters.month); 
 
-  const url = `/api/spend${params.toString() ? `?${params.toString()}` : ''}`;
+  const url = `https://cloud-spend-viewer.onrender.com/api/spend${params.toString() ? `?${params.toString()}` : ''}`;
 
   try {
     const res = await fetch(url);
