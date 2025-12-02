@@ -2,6 +2,10 @@
 
 A simple MERN skeleton to explore cloud cost data with filters and summaries.
 
+## Live Demo
+
+Deployed on Vercel: https://cloud-spend-viewer-1gql.vercel.app/
+
 ## Project Structure
 
 ```
