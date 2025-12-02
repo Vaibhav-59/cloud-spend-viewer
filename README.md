@@ -63,13 +63,9 @@ nodemon index.js
 ```
 Server starts at http://localhost:5000
 
-## Screenshots
-
-Place screenshot images in `client/public/screenshots/` so they can be served statically. Suggested filenames are provided below—replace them with your own if needed.
 
 ### Summary View
-![alt text](<img width="1896" height="842" alt="Screenshot 2025-12-02 181350" src="https://github.com/user-attachments/assets/649d90fc-6a75-4a74-a903-daebe2c98245" />
-)
+![alt text](C:\Users\Vaibhav Vataliya\Pictures\Screenshots\Screenshot 2025-12-02 181350.png)
 
 ### Data Table
 ![Data Table](<img width="1890" height="855" alt="Screenshot 2025-12-02 181447" src="https://github.com/user-attachments/assets/69e833f6-626b-4eb2-b80f-602b139ae305" />
