@@ -68,10 +68,13 @@ Server starts at http://localhost:5000
 Place screenshot images in `client/public/screenshots/` so they can be served statically. Suggested filenames are provided below—replace them with your own if needed.
 
 ### Summary View
-![Summary View](client/public/screenshots/summary.png)
+![Summary View](<img width="1896" height="842" alt="Screenshot 2025-12-02 181350" src="https://github.com/user-attachments/assets/b2598d80-04f2-415e-99d5-06ba1da3db7e" />
+)
 
 ### Data Table
-![Data Table](client/public/screenshots/table.png)
+![Data Table](<img width="1890" height="855" alt="Screenshot 2025-12-02 181447" src="https://github.com/user-attachments/assets/69e833f6-626b-4eb2-b80f-602b139ae305" />
+)
 
 ### Cost Allocation Chart
-![Cost Allocation Chart](client/public/screenshots/chart.png)
+![Cost Allocation Chart](<img width="1894" height="871" alt="Screenshot 2025-12-02 181437" src="https://github.com/user-attachments/assets/dfa68d82-a00a-4f99-8cd9-00346eebf987" />
+)
