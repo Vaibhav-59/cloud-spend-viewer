@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        target: 'https://cloud-spend-viewer.onrender.com/',
         changeOrigin: true,
       },
     },
