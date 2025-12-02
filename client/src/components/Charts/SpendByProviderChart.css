@@ -1,0 +1,39 @@
+:root {
+  --ch-accent: #719ceb;  /* match navbar */
+  --ch-aws: #f59e0b;     /* amber */
+  --ch-gcp: #10b981;     /* emerald */
+  --ch-azure: #3b82f6;   /* blue */
+  --ch-border: #e5e7eb;
+  --ch-text: #0f172a;
+  --ch-muted: #475569;
+}
+
+.chart-card {
+  border: 1px solid var(--ch-border);
+  border-radius: 12px;
+  background: linear-gradient(180deg, #ffffff, #fbfdff);
+  padding: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+.chart-header { 
+  margin-bottom: 8px; 
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--ch-border);
+  background: linear-gradient(180deg, rgba(113,156,235,0.08), rgba(113,156,235,0));
+}
+.chart-title { 
+  margin: 0; 
+  font-size: 1rem; 
+  font-weight: 700;
+  color: var(--ch-text);
+}
+.chart-body { height: 320px; }
+.chart-empty { color: var(--ch-muted); margin: 0; }
+
+@media (max-width: 900px) {
+  .chart-body { height: 260px; }
+}
+
+@media (max-width: 640px) {
+  .chart-body { height: 220px; }
+}

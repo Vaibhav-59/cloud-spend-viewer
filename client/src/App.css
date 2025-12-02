@@ -1,0 +1,265 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Global resets */
+html { 
+  margin: 0; 
+  overflow-x: hidden; /* double safety with body for horizontal scroll */
+  scroll-behavior: smooth; /* smooth in-page anchor scrolling */
+}
+body {
+  margin: 0;             
+  /* overflow-x: hidden;     prevent horizontal scrollbar caused by 100vw navbar */
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure form controls inherit font */
+input, select, button, textarea { font-family: inherit; }
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* ---- Cloud Spend Viewer custom styles ---- */
+.header {
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.title-zero {
+  margin: 0;
+}
+
+.subtitle {
+  margin: 8px 0 0;
+  color: #666;
+}
+
+.section {
+  text-align: left;
+}
+
+.heading-zero {
+  margin-top: 0;
+}
+
+.filters-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.no-margin {
+  margin: 0;
+}
+
+/* --- Layout components --- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100vw;                 /* full-bleed bar */
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background: #488bf6;
+  border-bottom: 1px solid #94b3f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  color: #ffffff;               /* white text on blue navbar */
+  display: block; /* let the inner container handle layout */
+}
+
+/* Centered content inside full-bleed bar */
+.navbar__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 12px 48px;
+  display: flex;
+  align-items: center;
+
+}
+
+.navbar__brand {
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+  color: inherit; /* white */
+ text-decoration: none;
+}
+
+/* Mobile toggle base (hidden on desktop) */
+.navbar__checkbox { display: none; }
+.navbar__toggle {
+  display: none;
+  margin-left: auto;
+  width: 36px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.navbar__toggle:hover { background: rgba(255,255,255,0.12); }
+.navbar__toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #fff;
+  margin: 4px 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Ensure all links in navbar are white by default */
+.navbar a { color: inherit; }
+
+.navbar__spacer { 
+  display: none; /* hide spacer since CTA button was removed */
+}
+
+.navbar__menu {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  margin: 0;
+  padding: 0 4px;
+  margin-left: auto; /* push menu to the right */
+}
+
+.navbar__link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  opacity: 0.9;
+  display: inline-flex;
+  align-items: center;
+
+  padding: 6px 24px;
+  border-radius: 6px;
+}
+
+.navbar__link:hover,
+.navbar__link:focus {
+  background: rgba(255, 255, 255, 0.15);
+  outline: none;
+}
+
+.caret {
+  display: inline-block;
+  width: 0; 
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid rgba(255, 255, 255, 0.9);
+  transform: translateY(1px);
+}
+
+@media (max-width: 640px) {
+  :root { --navbar-h: 52px; } /* smaller offset on mobile */
+  body {
+    padding-top: 52px; /* offset body padding to match navbar height on mobile */
+  }
+  .navbar {
+    padding: 10px 12px;
+    border-radius: 0; /* keep edges flush */
+    gap: 0; /* remove unintended spacing */
+  }
+  .navbar__brand {
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+  /* Show hamburger and collapse menu */
+  .navbar__toggle { display: inline-flex; }
+  .navbar__menu {
+    position: absolute;
+    top: var(--navbar-h);
+    left: 0;
+    right: 0;
+    margin-left: 0;
+    padding: 8px 16px 12px;
+    background: #488bf6;
+    border-bottom: 1px solid #94b3f0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease;
+  }
+  /* Expand when checkbox checked */
+  .navbar__checkbox:checked ~ .navbar__menu { max-height: 260px; }
+  .navbar__link { font-size: 1rem; padding: 10px 6px; }
+  /* Animate hamburger to X when open */
+  .navbar__checkbox:checked + .navbar__toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .navbar__checkbox:checked + .navbar__toggle span:nth-child(2) { opacity: 0; }
+  .navbar__checkbox:checked + .navbar__toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+}
+
+.page-container {
+  display: block;
+}
+
+/* Anchor targets: avoid being covered by fixed navbar */
+#summary, #table, #chart {
+  scroll-margin-top: var(--navbar-h, 60px);
+}
+
+/* --- Table styles --- */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+.table {
+  width: 100%;
+  border: 1px solid;
+  border-collapse: collapse;
+}
+.table th, .table td {
+  border-bottom: 1px solid #d3ddf2;
+  padding: 8px 10px;
+  text-align: left;
+}
+.table thead th {
+  background: #d4e8fd;
+}
+
+/* --- Utilities --- */
+.error {
+  color: #b91c1c;
+}
+
+/* --- Footer --- */
+.site-footer {
+  background: #719ceb;
+  color: #ffffff;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+  border-top: 1px solid #94b3f0;
+}
+.site-footer__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-footer__brand { font-weight: 700; }
+.site-footer__meta { opacity: 0.9; }
+
+@media (max-width: 640px) {
+  .site-footer__inner {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
