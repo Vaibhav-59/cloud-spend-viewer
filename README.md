@@ -68,7 +68,7 @@ Server starts at http://localhost:5000
 Place screenshot images in `client/public/screenshots/` so they can be served statically. Suggested filenames are provided below—replace them with your own if needed.
 
 ### Summary View
-![Summary View](<img width="1896" height="842" alt="Screenshot 2025-12-02 181350" src="https://github.com/user-attachments/assets/b2598d80-04f2-415e-99d5-06ba1da3db7e" />
+![alt text](<img width="1896" height="842" alt="Screenshot 2025-12-02 181350" src="https://github.com/user-attachments/assets/649d90fc-6a75-4a74-a903-daebe2c98245" />
 )
 
 ### Data Table
