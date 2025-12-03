@@ -61,7 +61,7 @@ Server (Express):
 ```
 nodemon index.js
 ```
-Server starts at http://localhost:5000
+Server starts at http://localhost:10000
 
 ## Screenshots
 
